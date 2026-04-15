@@ -16,11 +16,20 @@ import java.util.logging.*;
 
 import javax.swing.event.ListSelectionEvent;
 
+/**
+ * <p>Prueba</p>
+ * @author Isabel Romï¿½n
+ *
+ */
+
+
+
+
 
 /**
- * <p>Controlador de la vista de Ejemplares. Está sin terminar y tiene problemas graves, como por ejemplo al crear uno no se especifica tipo de título y no permite
+ * <p>Controlador de la vista de Ejemplares. Estï¿½ sin terminar y tiene problemas graves, como por ejemplo al crear uno no se especifica tipo de tï¿½tulo y no permite
  * asociarlo con uno ya existente</p>
- * @author Isabel Román
+ * @author Isabel Romï¿½n
  *
  */
 public class ItemListener extends CrudListener<Item>{
@@ -52,10 +61,10 @@ public class ItemListener extends CrudListener<Item>{
 		}		
 	}
 	/**
-	 * Responde a los cambios en la lista de múltiples ejemplares
+	 * Responde a los cambios en la lista de mï¿½ltiples ejemplares
 	 */
 	public void valueChanged(ListSelectionEvent e) {
-		log.info("Cambia la selección en la lista");		
+		log.info("Cambia la selecciï¿½n en la lista");		
 		((ItemDetails) view).setEntity((Item)view.getSelectedValue());
     } 
 	@Override
@@ -76,17 +85,17 @@ public class ItemListener extends CrudListener<Item>{
 
 	@Override
 	protected void save() {
-		log.finest("Entrando en método save");
+		log.finest("Entrando en mï¿½todo save");
 		entity=((ItemDetails) view).getItem();
 		log.info("Voy a guardar la entidad "+entity);
 		
 		((JpaItemDao) entityDao).save((Item) entity);
 	}
 	/**
-	 * Establece la vista de ejemplar vacía para buscar un libro, sólo habilita la introducción del número de inventario
+	 * Establece la vista de ejemplar vacï¿½a para buscar un libro, sï¿½lo habilita la introducciï¿½n del nï¿½mero de inventario
 	 */
 	protected void setSearchView() {	
-		log.info("Estableciendo vista de ejemplar vacía para buscar por número de inventario");
+		log.info("Estableciendo vista de ejemplar vacï¿½a para buscar por nï¿½mero de inventario");
 		setSearchView("inventoryNr");	
 	}
 
